@@ -15,7 +15,7 @@ export class AppLayout extends React.Component<AppLayoutProps, any> {
     public render() {
         return (
             <Layout style={{minHeight: "100vh"}}>
-                <Sider collapsible>
+                <Sider collapsible collapsed={true}>
                     <Menu theme="dark">{this.renderMenuItems()}</Menu>
                 </Sider>
                 <Layout>
