@@ -1,3 +1,4 @@
+import Title from "antd/es/typography/Title";
 import {inject, observer} from "mobx-react";
 import * as React from "react";
 import {ItemList} from "../components/ItemList";
@@ -9,10 +10,14 @@ export class Home extends React.Component<any, any> {
         const {items} = this.props.rootStore;
         return (
             <div>
+                <Title level={3}>Yetric UI</Title>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                    adipisci aut culpa ea, eligendi est, id in incidunt
+                    inventore maxime nam nesciunt nostrum odio quibusdam quo
+                    similique unde, voluptates voluptatum.
+                </p>
                 <ItemList store={items} />
-                <div>
-                    {this.props.rootStore.app.isHidden ? "hidden" : "visible"}
-                </div>
             </div>
         );
     }

@@ -8,6 +8,8 @@ import * as menuConfig from "./config/menu.json";
 import {RootStore} from "./stores/RootStore";
 import {MenuItem} from "./ui/MenuItem";
 import {Account, ForgotPassword, Home, Login, Settings, Signup} from "./views";
+import "./App.scss";
+
 const menuItems = menuConfig.items.map((item: any) => {
     return new MenuItem(item.path, item.label, item.icon);
 });

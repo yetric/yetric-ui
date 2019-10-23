@@ -13,9 +13,15 @@ class ItemList extends React.Component<ItemListInterface, any> {
     public render() {
         return (
             <div>
-                <h4>Clicked Items: {this.props.store.clickedItems}</h4>
                 <List
-                    header={<h3>Gists</h3>}
+                    header={
+                        <h3 className={"list-item-header"}>
+                            Gists
+                            <span>
+                                Clicked Items: {this.props.store.clickedItems}
+                            </span>
+                        </h3>
+                    }
                     footer={<div>Footer</div>}
                     bordered
                     dataSource={this.props.store.items}

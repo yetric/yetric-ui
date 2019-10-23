@@ -39,7 +39,7 @@ export class AppLayout extends React.Component<AppLayoutProps, any> {
                             style={{
                                 border: "1px solid rgb(235, 237, 240)"
                             }}
-                            title="Yetric UI"
+                            title="Use this area for contextual content for your view"
                             subTitle="UI stuffz"
                         />
                         <Content
