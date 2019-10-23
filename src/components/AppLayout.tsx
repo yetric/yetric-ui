@@ -29,9 +29,9 @@ export class AppLayout extends React.Component<AppLayoutProps, any> {
                     </Content>
                     <Footer style={{textAlign: "center"}}>
                         <a
-                            href="https://github.com/hising/frontend-starter-kit"
+                            href="https://github.com/yetric/yetric-ui"
                             target="_blank">
-                            <Icon type="github" /> Frontend Starter Kit
+                            <Icon type="github" /> Yetric UI Kit
                         </a>{" "}
                         ©2019 - Created by{" "}
                         <a href="https://yetric.com" target="_blank">
