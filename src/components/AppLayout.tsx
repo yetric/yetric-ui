@@ -4,7 +4,9 @@ import Menu from "antd/lib/menu";
 import * as React from "react";
 import {Link} from "react-router-dom";
 import {MenuItem} from "../ui/MenuItem";
-const {Content, Footer, Sider} = Layout;
+const {Content, Footer, Sider, Header} = Layout;
+
+import {PageHeader} from "antd";
 
 interface AppLayoutProps {
     children: any;
@@ -14,32 +16,51 @@ interface AppLayoutProps {
 export class AppLayout extends React.Component<AppLayoutProps, any> {
     public render() {
         return (
-            <Layout style={{minHeight: "100vh"}}>
-                <Sider collapsible collapsed={true}>
-                    <Menu theme="dark">{this.renderMenuItems()}</Menu>
-                </Sider>
-                <Layout>
-                    <Content
-                        style={{
-                            backgroundColor: "#fff",
-                            margin: "0",
-                            padding: "16px"
-                        }}>
-                        {this.props.children}
-                    </Content>
-                    <Footer style={{textAlign: "center"}}>
-                        <a
-                            href="https://github.com/yetric/yetric-ui"
-                            target="_blank">
-                            <Icon type="github" /> Yetric UI Kit
-                        </a>{" "}
-                        ©2019 - Created by{" "}
-                        <a href="https://yetric.com" target="_blank">
-                            Yetric AB
-                        </a>
-                    </Footer>
+            <div>
+                <Header>
+                    <div className="logo" />
+                    <Menu theme={"dark"} mode={"horizontal"}>
+                        <Menu.Item key="1">nav 1</Menu.Item>
+                        <Menu.Item key="2">nav 2</Menu.Item>
+                        <Menu.Item key="3">nav 3</Menu.Item>
+                    </Menu>
+                </Header>
+                <Layout style={{minHeight: "100vh"}}>
+                    <Sider style={{background: "#fff"}} collapsible>
+                        <Menu style={{height: "100%"}}>
+                            {this.renderMenuItems()}
+                        </Menu>
+                    </Sider>
+                    <Layout>
+                        <PageHeader
+                            style={{
+                                border: "1px solid rgb(235, 237, 240)"
+                            }}
+                            title="Yetric UI"
+                            subTitle="UI stuffz"
+                        />
+                        <Content
+                            style={{
+                                backgroundColor: "#fff",
+                                margin: "0",
+                                padding: "16px"
+                            }}>
+                            {this.props.children}
+                        </Content>
+                        <Footer style={{textAlign: "center"}}>
+                            <a
+                                href="https://github.com/yetric/yetric-ui"
+                                target="_blank">
+                                <Icon type="github" /> Yetric UI Kit
+                            </a>{" "}
+                            ©2019 - Created by{" "}
+                            <a href="https://yetric.com" target="_blank">
+                                Yetric AB
+                            </a>
+                        </Footer>
+                    </Layout>
                 </Layout>
-            </Layout>
+            </div>
         );
     }
 
