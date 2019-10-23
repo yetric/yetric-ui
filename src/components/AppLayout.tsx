@@ -19,10 +19,13 @@ export class AppLayout extends React.Component<AppLayoutProps, any> {
             <div>
                 <Header>
                     <div className="logo" />
-                    <Menu theme={"dark"} mode={"horizontal"}>
-                        <Menu.Item key="1">nav 1</Menu.Item>
-                        <Menu.Item key="2">nav 2</Menu.Item>
-                        <Menu.Item key="3">nav 3</Menu.Item>
+                    <Menu
+                        style={{lineHeight: "64px"}}
+                        theme={"dark"}
+                        mode={"horizontal"}>
+                        <Menu.Item key="1">Menu Item 1</Menu.Item>
+                        <Menu.Item key="2">Menu Item 2</Menu.Item>
+                        <Menu.Item key="3">Menu Item 3</Menu.Item>
                     </Menu>
                 </Header>
                 <Layout style={{minHeight: "100vh"}}>
