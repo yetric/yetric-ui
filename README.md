@@ -13,7 +13,7 @@ https://yetric-ui.netlify.com/
 -   Clone the repository
 
 ```
-git clone https://github.com/hising/frontend-starter-kit.git <project_name>
+git clone https://github.com/yetric/yetric-ui.git <project_name>
 ```
 
 -   Install dependencies
@@ -33,6 +33,7 @@ App accessible at http://localhost:3000
     -   Mini CSS Extract Plugin
     -   Webpack Dev Server
     -   Sass/Scss/Css/Style-loader
+    -   Favicons Webpack Plugin
 -   Babel
     -   React
     -   TypeScript

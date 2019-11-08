@@ -1,3 +1,4 @@
+const FavIconsWebpackPlugin = require("favicons-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpackDevServerPort = 3000;
@@ -32,6 +33,9 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/index.html"
+        }),
+        new FavIconsWebpackPlugin({
+            logo: "./src/assets/yetric-icon.png"
         })
     ],
     devServer: {

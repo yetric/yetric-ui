@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const FavIconsWebpackPlugin = require("favicons-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
 const TerserPlugin = require("terser-webpack-plugin");
@@ -46,6 +47,9 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/index.html"
+        }),
+        new FavIconsWebpackPlugin({
+            logo: "./src/assets/yetric-icon.png"
         }),
         new webpack.DefinePlugin({
             "process.env": {
