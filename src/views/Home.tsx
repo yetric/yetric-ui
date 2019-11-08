@@ -11,6 +11,7 @@ export class Home extends React.Component<any, any> {
         return (
             <div>
                 <Title level={3}>Yetric UI</Title>
+                <img src={require("../assets/yetric-icon.png")} />
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
                     adipisci aut culpa ea, eligendi est, id in incidunt

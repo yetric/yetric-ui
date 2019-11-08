@@ -41,6 +41,10 @@ const config = {
                     chunkName: "antd-icons"
                 },
                 include: [require.resolve("@ant-design/icons/lib/dist")]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ["file-loader"]
             }
         ]
     },
