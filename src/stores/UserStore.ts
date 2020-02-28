@@ -1,4 +1,3 @@
-import Fingerprint2 from "fingerprintjs2";
 import {observable} from "mobx";
 import {BaseStore} from "./BaseStore";
 import {RootStore} from "./RootStore";
@@ -38,13 +37,6 @@ export class UserStore extends BaseStore {
     }
 
     public getUuid() {
-        setTimeout(() => {
-            Fingerprint2.get((components) => {
-                this.uuid = Fingerprint2.x64hash128(
-                    components.map((component) => component.value).join(""),
-                    31
-                );
-            });
-        }, 500);
+        this.uuid = ""; // TODO - FIx
     }
 }
