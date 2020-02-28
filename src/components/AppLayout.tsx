@@ -1,12 +1,11 @@
-import Icon from "antd/lib/icon";
 import Layout from "antd/lib/layout";
 import Menu from "antd/lib/menu";
 import * as React from "react";
-import {Link} from "react-router-dom";
-import {MenuItem} from "../ui/MenuItem";
-const {Content, Footer, Sider, Header} = Layout;
+import { Link } from "react-router-dom";
+import { MenuItem } from "../ui/MenuItem";
+const { Content, Footer, Sider, Header } = Layout;
 
-import {PageHeader} from "antd";
+import { PageHeader } from "antd";
 
 interface AppLayoutProps {
     children: any;
@@ -19,20 +18,15 @@ export class AppLayout extends React.Component<AppLayoutProps, any> {
             <div>
                 <Header>
                     <div className="logo" />
-                    <Menu
-                        style={{lineHeight: "64px"}}
-                        theme={"dark"}
-                        mode={"horizontal"}>
+                    <Menu style={{ lineHeight: "64px" }} theme={"dark"} mode={"horizontal"}>
                         <Menu.Item key="1">Menu Item 1</Menu.Item>
                         <Menu.Item key="2">Menu Item 2</Menu.Item>
                         <Menu.Item key="3">Menu Item 3</Menu.Item>
                     </Menu>
                 </Header>
-                <Layout style={{minHeight: "100vh"}}>
-                    <Sider style={{background: "#fff"}} collapsible>
-                        <Menu style={{height: "100%"}}>
-                            {this.renderMenuItems()}
-                        </Menu>
+                <Layout style={{ minHeight: "100vh" }}>
+                    <Sider style={{ background: "#fff" }} collapsible>
+                        <Menu style={{ height: "100%" }}>{this.renderMenuItems()}</Menu>
                     </Sider>
                     <Layout>
                         <PageHeader
@@ -50,11 +44,10 @@ export class AppLayout extends React.Component<AppLayoutProps, any> {
                             }}>
                             {this.props.children}
                         </Content>
-                        <Footer style={{textAlign: "center"}}>
-                            <a
-                                href="https://github.com/yetric/yetric-ui"
-                                target="_blank">
-                                <Icon type="github" /> Yetric UI Kit
+                        <Footer style={{ textAlign: "center" }}>
+                            <a href="https://github.com/yetric/yetric-ui" target="_blank">
+                                {" "}
+                                Yetric UI Kit
                             </a>{" "}
                             ©2019 - Created by{" "}
                             <a href="https://yetric.com" target="_blank">
@@ -73,7 +66,6 @@ export class AppLayout extends React.Component<AppLayoutProps, any> {
             return (
                 <Menu.Item key={menuIndex++}>
                     <Link to={item.path}>
-                        <Icon type={item.icon} />
                         <span>{item.label}</span>
                     </Link>
                 </Menu.Item>

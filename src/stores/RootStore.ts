@@ -1,6 +1,6 @@
-import {AppStore} from "./AppStore";
-import {ItemStore} from "./ItemStore";
-import {UserStore} from "./UserStore";
+import { AppStore } from "./AppStore";
+import { ItemStore } from "./ItemStore";
+import { UserStore } from "./UserStore";
 
 export class RootStore {
     public items: ItemStore;

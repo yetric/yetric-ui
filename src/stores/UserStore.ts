@@ -1,6 +1,6 @@
-import {observable} from "mobx";
-import {BaseStore} from "./BaseStore";
-import {RootStore} from "./RootStore";
+import { observable } from "mobx";
+import { BaseStore } from "./BaseStore";
+import { RootStore } from "./RootStore";
 
 const TOKEN_TTL = 15 * 60 * 1000;
 

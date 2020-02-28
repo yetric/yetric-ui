@@ -2,11 +2,7 @@ function serialize(params: any) {
     const str = [];
     for (const paramName in params) {
         if (params.hasOwnProperty(paramName)) {
-            str.push(
-                `${encodeURIComponent(paramName)}=${encodeURIComponent(
-                    params[paramName]
-                )}`
-            );
+            str.push(`${encodeURIComponent(paramName)}=${encodeURIComponent(params[paramName])}`);
         }
     }
     return str.join("&");
