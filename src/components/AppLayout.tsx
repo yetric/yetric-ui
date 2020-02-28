@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { MenuItem } from "../ui/MenuItem";
 const { Content, Footer, Sider, Header } = Layout;
 
-import { PageHeader } from "antd";
-
 interface AppLayoutProps {
     children: any;
     menuItems: MenuItem[];
@@ -29,13 +27,6 @@ export class AppLayout extends React.Component<AppLayoutProps, any> {
                         <Menu style={{ height: "100%" }}>{this.renderMenuItems()}</Menu>
                     </Sider>
                     <Layout>
-                        <PageHeader
-                            style={{
-                                border: "1px solid rgb(235, 237, 240)"
-                            }}
-                            title="Use this area for contextual content for your view"
-                            subTitle="UI stuffz"
-                        />
                         <Content
                             style={{
                                 backgroundColor: "#fff",
