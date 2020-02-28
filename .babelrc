@@ -4,8 +4,11 @@
             "@babel/preset-env",
             {
                 "targets": {
-                    "node": "current"
-                }
+                    "chrome": "78"
+                },
+                "useBuiltIns": "usage",
+                "debug": true,
+                "corejs": 3
             }
         ],
         "@babel/preset-react",
