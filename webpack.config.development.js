@@ -4,6 +4,7 @@ const path = require("path");
 const webpackDevServerPort = 3000;
 
 const config = {
+    devtool: "source-map",
     entry: [
         `webpack-dev-server/client?http://localhost:${webpackDevServerPort}`,
         "webpack/hot/only-dev-server",
