@@ -3,12 +3,17 @@
         [
             "@babel/preset-env",
             {
+                "modules": false,
                 "targets": {
-                    "chrome": "78"
+                    "edge": "18",
+                    "firefox": "71",
+                    "chrome": "77",
+                    "safari": "12",
+                    "node": true
                 },
                 "useBuiltIns": "usage",
-                "debug": true,
-                "corejs": 3
+                "corejs": "3.6",
+                "debug": true
             }
         ],
         "@babel/preset-react",
@@ -28,11 +33,6 @@
             }
         ],
         "@babel/plugin-transform-async-to-generator",
-        "@babel/plugin-proposal-object-rest-spread",
-        "react-hot-loader/babel",
-        [
-            "import",
-            {"libraryName": "antd", "libraryDirectory": "lib", "style": "css"}
-        ]
+        "@babel/plugin-proposal-object-rest-spread"
     ]
 }
