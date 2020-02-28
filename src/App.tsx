@@ -1,7 +1,6 @@
 import "antd/dist/antd.css";
 import {Provider} from "mobx-react";
 import * as React from "react";
-import {hot} from "react-hot-loader/root";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import {AppLayout} from "./components/AppLayout";
 import * as menuConfig from "./config/menu.json";
@@ -45,4 +44,4 @@ class App extends React.Component<AppProps, any> {
     }
 }
 
-export default hot(App);
+export default App;
