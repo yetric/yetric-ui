@@ -3,6 +3,8 @@ import {inject, observer} from "mobx-react";
 import * as React from "react";
 import {ItemList} from "../components/ItemList";
 
+import icon from "../assets/yetric-icon.png";
+
 @inject("rootStore")
 @observer
 export class Home extends React.Component<any, any> {
@@ -11,7 +13,7 @@ export class Home extends React.Component<any, any> {
         return (
             <div>
                 <Title level={3}>Yetric UI</Title>
-                <img src={require("../assets/yetric-icon.png")} />
+                <img className={"logo"} src={icon} />
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
                     adipisci aut culpa ea, eligendi est, id in incidunt
