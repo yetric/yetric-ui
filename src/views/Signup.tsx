@@ -1,13 +1,12 @@
-import {Modal} from "antd";
+import { Modal } from "antd";
 import Button from "antd/lib/button";
 import Checkbox from "antd/lib/checkbox";
 import Form from "antd/lib/form";
-import Icon from "antd/lib/icon";
 import Input from "antd/lib/input";
 import * as React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export class Signup extends React.Component<any, any> {
+export default class Signup extends React.Component<any, any> {
     private static handleSubmit(e: any) {
         e.preventDefault();
         alert("Signup");
@@ -21,38 +20,18 @@ export class Signup extends React.Component<any, any> {
     public render() {
         return (
             <div>
-                <Form onSubmit={Signup.handleSubmit} className="signup-form">
+                <Form className="signup-form">
                     <Form.Item>
-                        <Input
-                            prefix={<Icon type="mail" />}
-                            type="email"
-                            placeholder="E-mail"
-                            required={true}
-                        />
+                        <Input type="email" placeholder="E-mail" required={true} />
                     </Form.Item>
                     <Form.Item>
-                        <Input
-                            prefix={<Icon type="user" />}
-                            placeholder="Username"
-                            required={true}
-                        />
+                        <Input placeholder="Username" required={true} />
                     </Form.Item>
                     <Form.Item>
-                        <Input
-                            prefix={<Icon type="lock" />}
-                            type="password"
-                            placeholder="Password"
-                            onBlur={this.handleConfirmBlur}
-                            required={true}
-                        />
+                        <Input type="password" placeholder="Password" onBlur={this.handleConfirmBlur} required={true} />
                     </Form.Item>
                     <Form.Item>
-                        <Input
-                            prefix={<Icon type="lock" />}
-                            type="password"
-                            placeholder="Repeat Password"
-                            required={true}
-                        />
+                        <Input type="password" placeholder="Repeat Password" required={true} />
                     </Form.Item>
                     <Form.Item>
                         <Checkbox>
@@ -70,11 +49,8 @@ export class Signup extends React.Component<any, any> {
                         </Checkbox>
                     </Form.Item>
                     <Form.Item>
-                        <div style={{marginTop: "16px"}}>
-                            <Button
-                                htmlType="submit"
-                                className="login-form-button"
-                                style={{marginRight: "12px"}}>
+                        <div style={{ marginTop: "16px" }}>
+                            <Button htmlType="submit" className="login-form-button" style={{ marginRight: "12px" }}>
                                 Signup
                             </Button>
                             Or <Link to="/login">Login</Link>
@@ -104,6 +80,6 @@ export class Signup extends React.Component<any, any> {
 
     private handleConfirmBlur(e: any) {
         const value = e.target.value;
-        this.setState({confirmDirty: this.state.confirmDirty || !!value});
+        this.setState({ confirmDirty: this.state.confirmDirty || !!value });
     }
 }
