@@ -1,3 +1,4 @@
+const glob = require("glob-all");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -6,6 +7,7 @@ const path = require("path");
 const webpack = require("webpack");
 const TerserPlugin = require("terser-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const PurgecssPlugin = require("purgecss-webpack-plugin");
 
 const cleanOptions = {
     verbose: true,
@@ -13,7 +15,7 @@ const cleanOptions = {
 };
 
 const config = {
-    devtool: false,
+    devtool: "cheap-source-map",
     entry: ["./src/index.ts"],
     output: {
         path: path.resolve("dist"),
@@ -33,14 +35,6 @@ const config = {
                     "postcss-loader",
                     "sass-loader"
                 ]
-            },
-            {
-                loader: "webpack-ant-icon-loader",
-                enforce: "pre",
-                options: {
-                    chunkName: "antd-icons"
-                },
-                include: [require.resolve("@ant-design/icons/lib/dist")]
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -71,7 +65,16 @@ const config = {
                 preset: ["default", {discardComments: {removeAll: true}}]
             }
         }),
-        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+        new PurgecssPlugin({
+            paths: glob.sync([
+                path.join(__dirname, "src/**/*.html"),
+                path.join(__dirname, "src/**/*.js"),
+                path.join(__dirname, "src/**/*.ts"),
+                path.join(__dirname, "src/**/*.jsx"),
+                path.join(__dirname, "src/**/*.tsx")
+            ])
+        })
     ],
     optimization: {
         minimize: true,
