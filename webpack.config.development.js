@@ -4,17 +4,14 @@ const path = require("path");
 const webpackDevServerPort = 3000;
 
 const config = {
-    entry: [
-        `webpack-dev-server/client?http://localhost:${webpackDevServerPort}`,
-        "webpack/hot/only-dev-server",
-        "./src/index.ts"
-    ],
+    devtool: "source-map",
+    entry: ["./src/index.ts"],
     output: {
         path: path.resolve("dist"),
         filename: "[name].js"
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx"]
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".png"]
     },
     module: {
         rules: [

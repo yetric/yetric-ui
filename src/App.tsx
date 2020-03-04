@@ -1,13 +1,12 @@
 import "antd/dist/antd.css";
-import {Provider} from "mobx-react";
+import { Provider } from "mobx-react";
 import * as React from "react";
-import {hot} from "react-hot-loader/root";
-import {BrowserRouter as Router, Route} from "react-router-dom";
-import {AppLayout} from "./components/AppLayout";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { AppLayout } from "./components/AppLayout";
 import * as menuConfig from "./config/menu.json";
-import {RootStore} from "./stores/RootStore";
-import {MenuItem} from "./ui/MenuItem";
-import {Account, ForgotPassword, Home, Login, Settings, Signup} from "./views";
+import { RootStore } from "./stores/RootStore";
+import { MenuItem } from "./ui/MenuItem";
+import { Home, Signup, Login, ForgotPassword, Account, Settings } from "./views";
 import "./App.scss";
 
 const menuItems = menuConfig.items.map((item: any) => {
@@ -32,11 +31,7 @@ class App extends React.Component<AppProps, any> {
                         <Route path="/account" exact component={Account} />
                         <Route path="/signup" exact component={Signup} />
                         <Route path="/login" exact component={Login} />
-                        <Route
-                            path="/forgot-pwd"
-                            exact
-                            component={ForgotPassword}
-                        />
+                        <Route path="/forgot-pwd" exact component={ForgotPassword} />
                         <Route path="/settings" exact component={Settings} />
                     </AppLayout>
                 </Provider>
@@ -45,4 +40,4 @@ class App extends React.Component<AppProps, any> {
     }
 }
 
-export default hot(App);
+export default App;

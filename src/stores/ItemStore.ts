@@ -1,8 +1,8 @@
-import {action, computed, observable} from "mobx";
-import {HttpClient} from "../http/client";
-import {GistItem, GistJsonResponse} from "../models/Gist";
-import {BaseStore} from "./BaseStore";
-import {RootStore} from "./RootStore";
+import { action, computed, observable } from "mobx";
+import { HttpClient } from "../http/client";
+import { GistItem, GistJsonResponse } from "../models/Gist";
+import { BaseStore } from "./BaseStore";
+import { RootStore } from "./RootStore";
 export class ItemStore extends BaseStore {
     @observable public items: GistItem[] = [];
     private client: HttpClient;
@@ -14,9 +14,7 @@ export class ItemStore extends BaseStore {
     }
 
     public async grabItems() {
-        const gists = await this.client.get(
-            "https://api.github.com/users/hising/gists"
-        );
+        const gists = await this.client.get("https://api.github.com/users/hising/gists");
 
         this.items = gists.map((gist: GistJsonResponse) => {
             return {

@@ -1,8 +1,8 @@
 import List from "antd/lib/list";
-import {observer} from "mobx-react";
+import { observer } from "mobx-react";
 import * as React from "react";
-import {GistItem} from "../models/Gist";
-import {ItemStore} from "../stores/ItemStore";
+import { GistItem } from "../models/Gist";
+import { ItemStore } from "../stores/ItemStore";
 
 interface ItemListInterface {
     store: ItemStore;
@@ -17,9 +17,7 @@ class ItemList extends React.Component<ItemListInterface, any> {
                     header={
                         <h3 className={"list-item-header"}>
                             Gists
-                            <span>
-                                Clicked Items: {this.props.store.clickedItems}
-                            </span>
+                            <span>Clicked Items: {this.props.store.clickedItems}</span>
                         </h3>
                     }
                     footer={<div>Footer</div>}
@@ -52,4 +50,4 @@ class ItemList extends React.Component<ItemListInterface, any> {
     }
 }
 
-export {ItemList};
+export { ItemList };
